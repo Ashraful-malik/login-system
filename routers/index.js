@@ -21,6 +21,7 @@ router.get("/user", verifyAccessToken, async (req, res) => {
 router.post("/refresh-token", async (req, res) => {
   try {
     const { refreshToken } = req.body;
+
     if (!refreshToken) throw res.status(400);
     const userId = await verifyRefreshToken(refreshToken);
     const accessToken = await createToken(userId);

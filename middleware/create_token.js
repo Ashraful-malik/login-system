@@ -7,7 +7,7 @@ module.exports = {
       const payload = {};
       const secret = process.env.ACCESS_TOKEN_SECRET;
       const options = {
-        expiresIn: "15m",
+        expiresIn: "10s",
         audience: userId,
       };
       jwt.sign(payload, secret, options, (err, token) => {
